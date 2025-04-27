@@ -1,0 +1,22 @@
+{
+  "name": "another-spreadsheet-attempt",
+  "version": "1.0.0",
+  "description": "Spreadsheet application with DRY principles",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/test-utils.js",
+    "serve": "http-server . -p 8080 -c-1"
+  },
+  "keywords": [
+    "spreadsheet",
+    "DRY",
+    "principles"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

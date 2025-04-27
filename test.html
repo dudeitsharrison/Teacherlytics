@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Test</title>
+    <link rel="stylesheet" href="src/styles/global.css">
+    <link rel="stylesheet" href="src/styles/filters.css">
+    <style>
+        body {
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>FilterSystem Test</h1>
+        <div id="filter-section" class="filter-section"></div>
+        <div id="results">No results filtered yet</div>
+    </div>
+
+    <script type="module">
+        import { FilterSystem } from './src/utils/FilterSystem.js';
+
+        // Sample staff data
+        const sampleStaff = [
+            { id: '1', name: 'John Smith', phase: 'Primary', overseas_thai: 'Overseas', year_group: 'Year 1', department: 'EAL' },
+            { id: '2', name: 'Jane Doe', phase: 'Secondary', overseas_thai: 'Thai', year_group: 'Year 10', department: 'Outclass' },
+            { id: '3', name: 'Bob Johnson', phase: 'Foundation', overseas_thai: 'Overseas', year_group: 'Reception', department: 'LSA' }
+        ];
+
+        // Initialize filter system
+        const filterSystem = new FilterSystem({
+            filterSection: document.getElementById('filter-section'),
+            staffData: sampleStaff,
+            includeStandardsFilters: false,
+            onFilterChange: handleFilterChange
+        });
+
+        // Handle filter changes
+        function handleFilterChange(filteredStaff) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+            
+            if (filteredStaff.length === 0) {
+                resultsDiv.textContent = 'No staff match the filters';
+                return;
+            }
+            
+            resultsDiv.innerHTML = `
+                <h3>Filtered Results (${filteredStaff.length})</h3>
+                <ul>
+                    ${filteredStaff.map(staff => `
+                        <li>${staff.name} - ${staff.phase}, ${staff.overseas_thai}, ${staff.year_group}</li>
+                    `).join('')}
+                </ul>
+            `;
+        }
+    </script>
+</body>
+</html> 

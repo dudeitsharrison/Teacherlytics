@@ -1,0 +1,198 @@
+/* Hierarchical Standards Styles */
+.indent-marker, .hierarchy-line, .hierarchy-connector, .connector-line, .connector-branch {
+    display: none;
+}
+
+/* Style for standards table to ensure proper spacing and visibility */
+.standards-table tr[data-has-children="true"] > td:first-child {
+    font-weight: bold;
+}
+
+.standards-table tr {
+    transition: background-color 0.2s;
+}
+
+/* Color coding for hierarchy levels */
+.standards-table tr[data-level="0"] {
+    background-color: rgba(52, 152, 219, 0.12);
+    border-top: 1px solid #dee2e6;
+}
+
+.standards-table tr[data-level="1"] {
+    background-color: rgba(52, 152, 219, 0.07);
+}
+
+.standards-table tr[data-level="2"] {
+    background-color: rgba(52, 152, 219, 0.03);
+}
+
+.standards-table tr:hover {
+    background-color: rgba(52, 152, 219, 0.18);
+}
+
+/* Colored left borders to indicate level */
+.standards-table tr[data-level="0"] td:first-child {
+    border-left: 4px solid #3498db;
+}
+
+.standards-table tr[data-level="1"] td:first-child {
+    border-left: 4px solid #5faee3;
+}
+
+.standards-table tr[data-level="2"] td:first-child {
+    border-left: 4px solid #89c4ed;
+}
+
+/* Make the first level standard bold */
+.standards-table tr[data-level="0"] .standard-code {
+    font-weight: 600;
+}
+
+/* Standard cell styling */
+.standard-cell {
+    position: relative;
+}
+
+.standard-content {
+    display: flex;
+    align-items: center;
+}
+
+/* New hierarchy visualization elements */
+.hierarchy-spacer {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
+}
+
+.connector-vertical {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    height: 24px;
+    width: 1px;
+    background-color: #aaa;
+}
+
+.connector-horizontal {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    width: 12px;
+    height: 1px;
+    background-color: #aaa;
+}
+
+.connector-guide {
+    position: absolute;
+    left: 12px;
+    top: 0;
+    height: 24px;
+    width: 1px;
+    background-color: #ddd;
+}
+
+/* Parent standard styling */
+.parent-standard {
+    font-weight: 600;
+    color: #2c3e50;
+    position: relative;
+}
+
+/* Expand/collapse toggle styling */
+.toggle-children {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    user-select: none;
+    background-color: #3498db;
+    border-radius: 3px;
+    margin-left: 5px;
+    border: none;
+    color: white;
+}
+
+.expand-icon {
+    font-style: normal;
+    font-size: 0.8rem;
+    color: white;
+}
+
+/* Table cell sizes for better display */
+.standards-table td:first-child {
+    width: 15%;
+}
+
+.standards-table td:nth-child(2) {
+    width: 20%;
+}
+
+.standards-table td:nth-child(3) {
+    width: 45%;
+}
+
+.standards-table td:last-child {
+    width: 20%;
+    min-width: 150px;
+}
+
+/* Standards layout */
+.standards-layout {
+    display: flex;
+    gap: 20px;
+}
+
+.standards-sidebar {
+    flex: 0 0 300px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-right: 20px;
+    overflow-y: auto;
+    max-height: 800px;
+}
+
+.sidebar-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar-header h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.sidebar-info {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.standards-content {
+    flex: 1;
+    overflow: auto;
+}
+
+/* Standards container styling */
+#grouped-standards,
+#ungrouped-standards {
+    margin-bottom: 20px;
+}
+
+/* Make standard actions visible */
+.standard-actions {
+    min-width: 150px;
+    white-space: nowrap;
+}
+
+.standard-actions button {
+    margin-right: 5px;
+    display: inline-block;
+} 

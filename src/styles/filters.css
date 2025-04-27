@@ -1,0 +1,395 @@
+/**
+ * Filter system styles
+ * Common styles for filter components across the application
+ */
+
+/* Filter Section Container */
+.filter-section {
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.filter-section h3 {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+}
+
+/* Filter Container Layout */
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.main-filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+/* Staff and Classification Groups */
+.staff-group {
+    flex: 1;
+    min-width: 230px;
+}
+
+.classification-group {
+    flex: 2;
+    min-width: 300px;
+}
+
+.filter-group {
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px 10px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.filter-group h4 {
+    margin-top: 0;
+    margin-bottom: 4px;
+    font-size: 0.8rem;
+    color: #555;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 3px;
+}
+
+/* Classification header with add button */
+.classification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.add-classification-button {
+    background-color: #eef7ff;
+    border: 1px solid #c5e0f7;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 14px;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0077cc;
+}
+
+.add-classification-button:hover {
+    background-color: #d5ebff;
+    border-color: #a8d4f5;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+}
+
+/* Filter Items */
+.filter-item {
+    flex: 1 1 110px;
+    min-width: 100px;
+    margin-bottom: 4px;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+    padding: 6px;
+    box-shadow: none;
+    font-size: 0.85em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Classification filters specific layout */
+#classification-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+    width: 100%;
+}
+
+#classification-filters .filter-item {
+    flex: 1 1 90px;
+    min-width: 80px;
+    margin: 0; /* Remove bottom margin since grid handles spacing */
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 0.75em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #444;
+    max-width: 100%;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    left: 0;
+}
+
+.filter-item > label {
+    font-size: 0.8em;
+    color: #333;
+    margin-bottom: 4px;
+    border-bottom: 1px dotted #ddd;
+    padding-bottom: 2px;
+}
+
+/* Filter Input Row */
+.filter-input-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+    margin-bottom: 3px;
+}
+
+.filter-item select,
+.filter-item input[type="text"] {
+    flex: 1;
+    width: 100%;
+    padding: 3px 6px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 1px;
+    font-size: 0.8em;
+    height: 26px;
+    max-width: 100%;
+}
+
+/* Filter Buttons */
+.filter-button {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    line-height: 18px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-button:hover {
+    background-color: #e0e0e0;
+}
+
+.enter-filter-button {
+    background-color: #eef7ff;
+    border: 1px solid #c5e0f7;
+    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0077cc;
+}
+
+.enter-filter-button:hover {
+    background-color: #d5ebff;
+    border-color: #a8d4f5;
+}
+
+/* Filter Tags */
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 3px;
+    padding-top: 3px;
+    border-top: 1px dashed #e0e0e0;
+    width: 100%;
+    order: 3;
+}
+
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e3f5ed;
+    border-radius: 3px;
+    padding: 3px 8px 3px 6px;
+    font-size: 0.8em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    margin-bottom: 3px;
+    border-left: 3px solid #2ecc71;
+}
+
+.filter-tag.exclude {
+    background-color: #fbeaea;
+    border-left: 3px solid #e74c3c;
+}
+
+.filter-tag-remove {
+    cursor: pointer;
+    margin-left: 3px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.filter-tag-remove:hover {
+    background-color: rgba(0,0,0,0.2);
+}
+
+/* Filter Toggle Options */
+.filter-toggle {
+    display: flex;
+    margin-top: 2px;
+    font-size: 0.8em;
+    border-top: 1px solid #eee;
+    padding-top: 3px;
+    justify-content: flex-start;
+    gap: 4px;
+    width: 100%;
+}
+
+.filter-toggle label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-right: 0;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    padding: 2px 6px;
+    transition: background-color 0.2s;
+    font-size: 0.9em;
+}
+
+.filter-toggle label:hover {
+    background-color: #e8e8e8;
+}
+
+.filter-toggle input:checked + span {
+    font-weight: 500;
+    color: #2c7be5;
+}
+
+.filter-toggle input[value="include"]:checked + span {
+    color: #2ecc71;
+}
+
+.filter-toggle input[value="exclude"]:checked + span {
+    color: #e74c3c;
+}
+
+.filter-toggle input {
+    margin-right: 2px;
+    transform: scale(0.7);
+}
+
+/* Standards Group Specific Styles */
+.standards-row {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.standards-group {
+    width: 100%;
+    padding-bottom: 6px;
+}
+
+.standards-group h4 {
+    margin-bottom: 8px;
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 80px;
+    border-bottom: none;
+}
+
+.standards-group .filter-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.standards-group .filter-item {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    background: none;
+    padding: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    flex: 1;
+}
+
+.standards-group .filter-item > label {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    width: auto;
+    margin-right: 4px;
+    white-space: nowrap;
+}
+
+.standards-group .filter-input-row {
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.standards-group .filter-toggle {
+    margin-top: 0;
+    border-top: none;
+    padding-top: 0;
+    margin-left: 5px;
+    min-width: 170px;
+    white-space: nowrap;
+}
+
+.standards-group .filter-tags {
+    flex: 1;
+    flex-grow: 2;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    margin-left: 10px;
+    min-width: 200px;
+}
+
+#standards-filters .filter-item {
+    flex: 1;
+    min-width: 150px;
+    max-width: 300px;
+} 

@@ -1,0 +1,172 @@
+/* Tree-based hierarchy for the left sidebar */
+.tree-root {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Group styling */
+.tree-group {
+    margin-bottom: 15px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+.tree-group-header {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tree-group-header:hover {
+    background-color: #e5e5e5;
+}
+
+.tree-group-name {
+    flex-grow: 1;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+}
+
+/* Tree toggle indicators */
+.tree-toggle, 
+.tree-toggle-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,0.05);
+    cursor: pointer;
+    margin-right: 5px;
+    font-size: 12px;
+    user-select: none;
+}
+
+.tree-toggle:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Children containers */
+.tree-children, 
+.tree-item-children {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+}
+
+.tree-item-children {
+    padding-left: 20px;
+    border-left: 1px solid #eee;
+}
+
+/* Individual tree items */
+.tree-item {
+    margin: 0;
+    position: relative;
+}
+
+.tree-item-content {
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.tree-item-content:hover {
+    background-color: #f5f5f5;
+}
+
+.tree-item-name {
+    flex-grow: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 5px;
+}
+
+/* Make the action buttons always visible */
+.tree-item-actions {
+    display: flex;
+    visibility: visible;
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.tree-item-content:hover .tree-item-actions {
+    opacity: 1;
+}
+
+/* Style the buttons better */
+.button-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 3px;
+    margin-left: 3px;
+    color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-icon:hover {
+    background-color: rgba(0,0,0,0.1);
+    color: #000;
+}
+
+.edit-icon, 
+.add-icon {
+    font-style: normal;
+    font-size: 14px;
+}
+
+/* Highlighting */
+.highlight-tree-item > .tree-item-content {
+    background-color: #e3f2fd;
+    font-weight: bold;
+}
+
+/* Level indicator for indent */
+.level-indicator {
+    flex-shrink: 0;
+}
+
+/* Make the group toggle buttons visible */
+.tree-group-header .tree-toggle {
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* Ensure ungrouped standards section is styled properly */
+.tree-root > li:last-child {
+    margin-bottom: 0;
+}
+
+/* Proper spacing for groups/items with no children */
+.tree-group:empty,
+.tree-children:empty {
+    display: none;
+}
+
+/* Fix hierarchy tree item height */
+.tree-item {
+    min-height: 30px;
+}
+
+/* Make delete icon red */
+.delete-icon {
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 16px;
+} 

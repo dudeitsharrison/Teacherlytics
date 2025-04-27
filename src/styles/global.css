@@ -1,0 +1,716 @@
+/* Global CSS for Staff Management System */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+/* Layout */
+#main-nav {
+    background-color: #0277bd;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+
+#main-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#main-nav li {
+    margin-right: 1rem;
+}
+
+#main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+#main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    color: #0277bd;
+}
+
+main {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Buttons */
+.button {
+    display: inline-block;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.button:hover {
+    background-color: #3367d6;
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button-secondary {
+    background-color: #f1f3f4;
+    color: #202124;
+    border: 1px solid #dadce0;
+}
+
+.button-secondary:hover {
+    background-color: #e8eaed;
+}
+
+.button-success {
+    background-color: #34a853;
+}
+
+.button-success:hover {
+    background-color: #2d9249;
+}
+
+.button-danger {
+    background-color: #ea4335;
+}
+
+.button-danger:hover {
+    background-color: #d33426;
+}
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.table th, 
+.table td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.table td.editable {
+    cursor: pointer;
+    position: relative;
+}
+
+.table td.editable:hover {
+    background-color: #eaf2f8;
+}
+
+/* Editable Cell */
+.editable-cell-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #3498db;
+    outline: none;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+/* Filter Section */
+.filter-section {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+.filter-group h4 {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #495057;
+}
+
+.filter-item {
+    margin-bottom: 0.75rem;
+}
+
+.filter-item label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
+    color: #495057;
+}
+
+.filter-input-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.filter-input,
+.filter-select {
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.filter-button,
+.enter-filter-button {
+    background-color: transparent;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    width: 30px;
+    font-size: 1rem;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-button:hover,
+.enter-filter-button:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.filter-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+}
+
+.filter-toggle label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-toggle input {
+    margin-right: 0.25rem;
+}
+
+.filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Filter tag styles */
+.filter-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    background-color: #e3f2fd;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    color: #0277bd;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.filter-tag.exclude {
+    background-color: #ffebee;
+    color: #d32f2f;
+}
+
+.filter-tag-text {
+    margin-right: 0.25rem;
+}
+
+.remove-tag {
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.remove-tag:hover {
+    opacity: 1;
+}
+
+.filter-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.pagination button {
+    margin: 0 0.25rem;
+    padding: 0.5rem 0.75rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #3498db;
+    color: white;
+    border-color: #3498db;
+}
+
+.pagination button:hover:not(.active) {
+    background-color: #f1f1f1;
+}
+
+/* Modal */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+/* Use page-modal class for modals in global.css to avoid conflicts */
+.page-modal,
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 101;
+    width: 500px;
+    max-width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-large {
+    width: 700px;
+}
+
+.modal-header,
+.page-modal .modal-header {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2,
+.page-modal .modal-header h2 {
+    margin: 0;
+}
+
+.modal-close,
+.page-modal .modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modal-body,
+.page-modal .modal-body {
+    padding: 1rem;
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Color options for groups */
+.color-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+.color-preview {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid #ddd;
+}
+
+/* Standard Groups */
+.standard-group {
+    margin-bottom: 1rem;
+    border-left: 5px solid;
+    background-color: #fff;
+    border-radius: 0 5px 5px 0;
+}
+
+.standard-group-header {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.standards-group {
+    margin-bottom: 30px;
+}
+
+.standards-list {
+    padding: 0 10px;
+}
+
+.group-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.group-code {
+    background-color: #e7f5ff;
+    color: #1971c2;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+.group-header-description {
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.group-header-count {
+    font-size: 0.9em;
+    color: #495057;
+    font-weight: 500;
+}
+
+.standard-group-header .group-header-controls {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+/* Analytics Styles */
+.filter-groups-container {
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.filter-group-header {
+    background-color: #f8f9fa;
+    padding: 0.75rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.filter-group-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-color {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.charts-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.chart-selector {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chart-container {
+    height: 400px;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.color-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+/* Staff Meta */
+.staff-meta {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* Error and Info Messages */
+.error-message {
+    padding: 1rem;
+    background-color: #ffebee;
+    color: #d32f2f;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.info-message {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: 1rem 0;
+    border: 1px solid #bee5eb;
+}
+
+/* Header content with controls */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-controls {
+    cursor: pointer;
+}
+
+.gear-icon {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.gear-icon:hover {
+    opacity: 1;
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.ml-1 { margin-left: 0.5rem; }
+.mr-1 { margin-right: 0.5rem; }
+.mr-2 { margin-right: 1rem; }
+
+.hidden {
+    display: none;
+}
+
+/* Hierarchical Standards Styles */
+.sub-standards-list {
+    list-style: none;
+    margin: 10px 0;
+    padding-left: 10px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.sub-standards-list li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.sub-standards-list li span {
+    flex-grow: 1;
+}
+
+.sub-standards-list li button {
+    margin-left: 5px;
+}
+
+.sub-standards-container {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+/* Button sizes */
+.button-small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* Example Data Section */
+.example-data-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.example-data-note {
+    margin-left: 10px;
+    font-style: italic;
+    color: #666;
+} 
